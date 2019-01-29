@@ -1,9 +1,22 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Mes Articles
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($article)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing..." class="refresh">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card *ngFor= "let Article of article">
+    <img src="{{ Article.Image }}">
+    <div class="card-title">{{ Article.Titre }}</div>
+    <div class="card-subtitle">{{ Article.Auteur }}</div>
+  </ion-card>
+
+</ion-content>

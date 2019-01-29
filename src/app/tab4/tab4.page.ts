@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss']
+  selector: 'app-tab4',
+  templateUrl: './tab4.page.html',
+  styleUrls: ['./tab4.page.scss'],
 })
-export class Tab3Page {
+export class Tab4Page implements OnInit {
+
   constructor() { }
+
   doRefresh(event) {
     console.log('Begin async operation');
 
@@ -14,5 +16,7 @@ export class Tab3Page {
       console.log('Async operation has ended');
       event.target.complete();
     }, 2000);
+  }
+  ngOnInit() {
   }
 }
